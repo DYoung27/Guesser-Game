@@ -19,12 +19,12 @@ let found = []
 
 // Div tag to add p tags
 let block = document.getElementById('state-box')
-TO DO LIST:
-ADD LISTEN FOR ENTER BUTTON IN INPUT BOX
-ADD CHECK FOR IF ALL STATES FOUND
 
 // The input box
 let enter = document.getElementById('entry')
+
+// Check enter press key
+enter.addEventListener('keyup',function(event){if (event.key == "Enter") {stateCheck()}})
 
 // Creates a p tag for each state 
 for (i = 0; i < states.length; i++) {
@@ -43,7 +43,7 @@ for (i = 0; i < states.length; i++) {
 
 // Function to process the user guesses
 stateCheck = () => {
-
+    console.log(found)
     // Checks if the state has already been found
     checkFound = found.filter(name => name.toLowerCase() == enter.value.toLowerCase()).length
     if (checkFound) {return}
@@ -59,6 +59,12 @@ stateCheck = () => {
         box = document.getElementById(states.indexOf(checkState[0]))
         if (box.className == "oneBox"){box.style.color = "seagreen"}
         else {box.style.color = "skyblue"}
+        
+        // Clear input box
+        enter.value = ""
+
+        if (found.length == 2) {
+            window.open('','_self').close()
+        }
     }
 }
-
