@@ -1,0 +1,110 @@
+body {
+    background-image: url("US.png");
+    background-repeat: no-repeat;
+    background-size: cover;
+}
+
+p 
+{margin: 0
+}
+
+.macEffect {
+    color: white;
+    background-image: linear-gradient(#00a1ff, #08b56a);
+    font-family: Arial, Helvetica, sans-serif;
+}
+
+header {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    border: black solid;
+    border-radius: 10px; 
+    padding: 10px;
+    font-weight: bold;
+}
+
+#main-title-box {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+h1 {
+    font-size: 50px;
+    padding-right: 50px;
+    margin-left: 160px;
+    font-weight: bold;
+    text-decoration: underline;
+}
+
+#globe {
+    margin-top: 15px;
+    width: 100px;
+    height: 110px;
+    margin-left: 10px;
+}
+
+#sub-head {
+    display: flex;
+    justify-content: center;
+    font-size: 25px;
+    margin-top: 2em;
+}
+
+main {
+    background-color: white;
+    margin-top: 150px;
+    margin-left: 20%;
+    width: 450px;
+    font-size: 33px;
+}
+
+
+
+#state-box {
+    display: flex;
+    flex-direction: column;
+    flex-wrap: wrap;
+    height: 962.5px;
+}
+
+#entry-box {
+    border:  black solid;
+    width: 196.667%;
+    padding: 6px;
+    align-items: center;
+}
+#label-text {
+    font-family: 'Gill Sans', 'Gill Sans MT', Calibri, 'Trebuchet MS', sans-serif;
+    margin-right: 7.5px;
+}
+
+#entry {
+    width: 450px;
+    font-size: 27px;
+    padding-bottom: 4.5px;
+}
+
+#enter-btn {
+    height: 45px;
+    width: 120px;
+    cursor: pointer;
+    font-weight: bold;
+    padding-top: 6px;
+    margin-left: 22.5px;
+
+}
+
+.oneBox {
+    background-color: seagreen;
+    color: skyblue;
+    width: 100%;
+}
+
+.twoBox {
+    background-color: skyblue;
+    color: seagreen;
+    width: 100%;
+}

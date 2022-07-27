@@ -1,0 +1,31 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Guesser Game</title>
+    <script src="guesser-game.js" defer></script>
+    <link rel="stylesheet" href="guesser-game.css"/>
+
+</head>
+<body>
+    <header class="macEffect">
+        <div id="main-title-box">
+            <h1>Welcome To Guesser Game</h1>
+            <img id="globe" src="https://www.clipartmax.com/png/middle/215-2155853_big-image-transparent-background-globe-cartoon.png" alt="globe"/>
+        </div>
+        <p id="sub-head">(The objective is to guess as many of the 50 US states as you can!)</p>
+        
+    </header>
+    <main>
+        <div id="entry-box" class="macEffect">
+            <label id="label-text" for="entry">Enter a Location: </label>
+            <input id="entry" placeholder="Type Here..." />
+            <button id="enter-btn" onclick="stateCheck()">Check</button>
+        </div>
+
+        <div id="state-box"></div>
+    </main>
+</body>
+</html>
