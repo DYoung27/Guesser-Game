@@ -19,6 +19,9 @@ let found = []
 
 // Div tag to add p tags
 let block = document.getElementById('state-box')
+TO DO LIST:
+ADD LISTEN FOR ENTER BUTTON IN INPUT BOX
+ADD CHECK FOR IF ALL STATES FOUND
 
 // The input box
 let enter = document.getElementById('entry')
