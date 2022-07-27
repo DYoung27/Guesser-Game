@@ -17,22 +17,45 @@ let states = [
 // An array of all US states the player has entered
 let found = []
 
-
+// Div tag to add p tags
 let block = document.getElementById('state-box')
+
+// The input box
 let enter = document.getElementById('entry')
 
 // Creates a p tag for each state 
 for (i = 0; i < states.length; i++) {
     const el = document.createElement('p')
-    el.setAttribute('id','state-'+ i)
+    el.setAttribute('id', i)
 
+    // Assigns class to give colour variation
     if (i % 2) {el.setAttribute('class', 'oneBox')}
     else{el.setAttribute('class', 'twoBox')}
+
+    // Puts state names into each p tag and displays the p tag inside the state-box div tag
     el.innerText= states[i]
     block.appendChild(el)
 }
 
+
+// Function to process the user guesses
 stateCheck = () => {
-    console.log(enter.value)
+
+    // Checks if the state has already been found
+    checkFound = found.filter(name => name.toLowerCase() == enter.value.toLowerCase()).length
+    if (checkFound) {return}
+
+    // Checks if the state is valid
+    checkState = states.filter(name => name.toLowerCase() == enter.value.toLowerCase())
+    if(checkState.length) {
+
+        // Adds state to array of found states
+        found.push(checkState[0])
+
+        // Changes color of states found
+        box = document.getElementById(states.indexOf(checkState[0]))
+        if (box.className == "oneBox"){box.style.color = "seagreen"}
+        else {box.style.color = "skyblue"}
+    }
 }
 
