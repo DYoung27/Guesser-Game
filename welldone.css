@@ -1,34 +1,33 @@
 body {
     background-image: linear-gradient(to top, #a8edea 0%, #fed6e3 100%);
+    position:relative;
+}
+
+.shared-atts {
+    position: absolute;
+    border: solid;
+    border-radius: 100px;
+    cursor: pointer;
+    font-family: Arial, Helvetica, sans-serif;
+    color: #fff;
+    text-align: center;
 }
 
 #confetti-btn {
-    color: #fff;
-    font-size: 1rem;
     background-color: #FF9899;
-    text-shadow: 3px 3px #E74C3C;
     border-color: #E74C3C;
-    border: 1px solid;
-    border-radius: 100px;
-    padding: 5px 15px;
-    margin-left: 5px;
     line-height: 2.5;
-     cursor: pointer;
-}
-
-main {
-    color: #fff;
-    display: flex;
-    justify-content: center;
-    font-family: Arial, Helvetica, sans-serif;
-    font-size: 25px;
-    text-shadow: 10px 10px #ffcba5;
+    padding: 20px 30px;
+    margin: 10px;
+    font-size: 20px;
+    text-shadow: 3px 3px #E74C3C;
 }
 
 #welldone-box{
+    margin-top: 15%;
+    margin-left: 15%;
+    font-size: 24px;
+    padding: 70px;
     background-image: linear-gradient(to top, #fde5b4 0%, #ffcbc4 100%);
-    border: solid;
-    padding: 100px;
-    border-radius: 100px;
-
+    text-shadow: 10px 10px #f7be96;
 }
