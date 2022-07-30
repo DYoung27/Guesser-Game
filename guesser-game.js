@@ -1,10 +1,16 @@
 
 // This will import soundtrack for the website
-var soundtrack = new Audio("song.mp3")
+var soundtrack = new Audio('song.mp3')
 
 // Functions to play and pause music
-play = () => {soundtrack.play()}
-pause = () => {soundtrack.pause()}
+let playing = false
+
+toggleAudio = () => {
+    if (playing) {soundtrack.load(); playing = false} 
+    else {soundtrack.play(); playing = true}
+}
+
+toggleAudio()
 
 // An array of all US states
 let states = [
@@ -15,7 +21,7 @@ let states = [
 ]
 
 // An array of all US states the player has entered
-let found = []
+var found = []
 
 // Div tag to add p tags
 let block = document.getElementById('state-box')
@@ -24,7 +30,7 @@ let block = document.getElementById('state-box')
 let enter = document.getElementById('entry')
 
 // Check enter press key
-enter.addEventListener('keyup',function(event){if (event.key == "Enter") {stateCheck()}})
+enter.addEventListener('keyup',(event) => {if (event.key == "Enter") {stateCheck()}})
 
 // Creates a p tag for each state 
 for (i = 0; i < states.length; i++) {
@@ -40,10 +46,26 @@ for (i = 0; i < states.length; i++) {
     block.appendChild(el)
 }
 
-
+wordAnimation = (colour) => {
+    const textMove = [ 
+        [
+            {transform: 'rotate(360deg) scale(0)'},
+            {transform: 'rotate(0) scale(1)'}
+        ],
+        [
+            {transform: 'translateX(1000px)'},
+            {transform: 'translateX(0px)'}
+        ]
+    ]
+    
+    const ani = Math.floor(Math.random() * 2)
+    console.log(textMove)
+    return textMove[ani]
+}
+transform: 'translateX(1000px)'
+transform: 'translateX(0px)'
 // Function to process the user guesses
 stateCheck = () => {
-    console.log(found)
     // Checks if the state has already been found
     checkFound = found.filter(name => name.toLowerCase() == enter.value.toLowerCase()).length
     if (checkFound) {return}
@@ -57,14 +79,22 @@ stateCheck = () => {
 
         // Changes color of states found
         box = document.getElementById(states.indexOf(checkState[0]))
-        if (box.className == "oneBox"){box.style.color = "seagreen"}
-        else {box.style.color = "skyblue"}
+        console.log(box)
+        if (box.className == "oneBox") {
+            box.style.color = "seagreen";
+            box.animate(wordAnimation("seagreen"), 500)
+        }
+        else {
+            box.style.color = "skyblue"
+            box.animate(wordAnimation("skyblue"), 500)
+        }
         
         // Clear input box
         enter.value = ""
 
         if (found.length == 2) {
-            window.open('','_self').close()
+            toggleAudio()
+            setTimeout(() => {window.open('','_self').close(); window.open('welldone.html')}, 500)
         }
     }
 }

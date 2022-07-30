@@ -5,13 +5,17 @@
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>🎉Well Done🎉</title>
-    <script src="confetti.js" defer></script>
+    <script src='confetti.js' defer></script>
+    <script src='welldone.js' defer></script>
     <link rel='stylesheet' href='welldone.css'/>
 </head>
 <body>
     <button id='confetti-btn' class='shared-atts' onclick="toggleConfetti()">Toggle Confetti</button>
     <div id='welldone-box' class='shared-atts'>
-        <h1>Well Done You Completed The Game!</h1>
+        <img src='https://acegif.com/wp-content/gifs/race-flag-13.gif' alt='flags' />
+        <h1>Well Done!<br>You Completed The Game!</h1>
+        <a href='guesser-game.html'><button id='reset-btn' class='buttons shared-atts'>Replay</button></a>
+        <button id='close-btn' class='buttons shared-atts'>Exit Game</button>
     </div>
 
 </body>

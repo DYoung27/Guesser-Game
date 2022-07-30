@@ -7,27 +7,55 @@ body {
     position: absolute;
     border: solid;
     border-radius: 100px;
-    cursor: pointer;
     font-family: Arial, Helvetica, sans-serif;
     color: #fff;
     text-align: center;
+    font-size: 30px;
 }
 
 #confetti-btn {
-    background-color: #FF9899;
-    border-color: #E74C3C;
-    line-height: 2.5;
-    padding: 20px 30px;
-    margin: 10px;
-    font-size: 20px;
-    text-shadow: 3px 3px #E74C3C;
+    cursor: pointer;
+    width: 250px;
+    height: 120px;
+    background-image: linear-gradient(to top, #FF9899 0%, #E74C3C 100%);
+    margin: 30px;
+    text-shadow: 4px 4px #E74C3C;
+    transition: transform .2s;
+    
 }
 
 #welldone-box{
-    margin-top: 15%;
-    margin-left: 15%;
-    font-size: 24px;
-    padding: 70px;
+    top: 50%;
+    left: 50%;
+    width: 700px;
+    transform: translate(-50%, -50%);
+    margin-top: 10px;
+    padding: 55px;
+    align-items: center;
     background-image: linear-gradient(to top, #fde5b4 0%, #ffcbc4 100%);
     text-shadow: 10px 10px #f7be96;
+}
+
+.buttons {
+    position: static;
+    cursor: pointer;
+    width: 200px;
+    height: 100px;
+    border-radius: 100px;
+    margin: 0px 20px;
+    margin-top: 20px;
+    background-image: linear-gradient(to top, #ffdde1 0%,#ee9ca7 100%);
+    text-shadow: 3px 4px #E74C3C;
+    transition: transform .2s;
+}
+
+#confetti-btn:hover, .buttons:hover {
+    -ms-transform: scale(1.1); /* IE 9 */
+    -webkit-transform: scale(1.1);
+    transform: scale(1.1);
+}
+
+@keyframes moveWords {
+    0% {transform: scale(1, 1);}
+    50%{transform: scale(1.1, 1.1);}    
 }

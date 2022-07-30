@@ -41,7 +41,7 @@ var removeConfetti; //call to stop the confetti animation and remove all confett
 				};
 		})();
 		var canvas = document.getElementById("confetti-canvas");
-		if (canvas === null) {
+		if (!canvas) {
 			canvas = document.createElement("canvas");
 			canvas.setAttribute("id", "confetti-canvas");
 			canvas.setAttribute("style", "display:block;z-index:999999;pointer-events:none");
@@ -57,10 +57,10 @@ var removeConfetti; //call to stop the confetti animation and remove all confett
 		while (particles.length < maxParticleCount)
 			particles.push(resetParticle({}, width, height));
 		streamingConfetti = true;
-		if (animationTimer === null) {
+		if (!animationTimer) {
 			(function runAnimation() {
 				context.clearRect(0, 0, window.innerWidth, window.innerHeight);
-				if (particles.length === 0)
+				if (!particles.length)
 					animationTimer = null;
 				else {
 					updateParticles();
@@ -90,7 +90,7 @@ var removeConfetti; //call to stop the confetti animation and remove all confett
 	function drawParticles(context) {
 		var particle;
 		var x;
-		for (var i = 0; i < particles.length; i++) {
+		for (var i in particles) {
 			particle = particles[i];
 			context.beginPath();
 			context.lineWidth = particle.diameter;
@@ -107,7 +107,7 @@ var removeConfetti; //call to stop the confetti animation and remove all confett
 		var height = window.innerHeight;
 		var particle;
 		waveAngle += 0.01;
-		for (var i = 0; i < particles.length; i++) {
+		for (var i in particles) {
 			particle = particles[i];
 			if (!streamingConfetti && particle.y < -15)
 				particle.y = height + 100;
