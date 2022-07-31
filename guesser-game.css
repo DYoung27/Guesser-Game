@@ -15,11 +15,22 @@ p {
     text-shadow: 3px 3px #a3a3a3;
 }
 
+#menu-btns {
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    justify-content: space-around;
+    margin-top: 1%;
+    width: 450px;
+    height: 60px;
+}
+
 header {
     display: flex;
     flex-direction: column;
     align-items: center;
     justify-content: center;
+    margin: 1%;
     border: black solid;
     border-radius: 50px; 
     padding: 10px;
@@ -29,21 +40,21 @@ header {
 .btns {
     background-image: linear-gradient(lightgrey 40%, grey);
     border: solid;
-    border-radius: 20px;
+    border-radius: 200px;
     cursor: pointer;
     font-weight: bold;
 }
 
-.btns:hover {
-    background-image: linear-gradient(darkgrey, #818080);;
+.btns2 {
+    padding: 20px;
+    font-size: 20px;
 }
 
-#toggle-btn {
-    position: absolute;
-    width: 140px;
-    height: 65px;
-    margin-left: -75%;
-    font-size: 20px;
+.btns:hover {
+    background-image: linear-gradient(darkgrey, #818080);
+    -ms-transform: scale(1.1);
+    -webkit-transform: scale(1.1);
+    transform: scale(1.1);
 }
 
 #main-title-box {
@@ -150,7 +161,7 @@ main {
 }
 
 @keyframes waveRight {
-    0% {transform: translate(-1000px, 70px);}
+    0% {transform: translate(-1500px, 70px);}
     10% {transform: translate(-900px, 35px);}
     20% {transform: translate(-800px, 0px);}
     30% {transform: translate(-700px, -35px);}

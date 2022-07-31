@@ -1,31 +1,33 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang='en'>
 <head>
-    <meta charset="UTF-8">
-    <meta http-equiv="X-UA-Compatible" content="IE=edge">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta charset='UTF-8'>
+    <meta http-equiv='X-UA-Compatible' content='IE=edge'>
+    <meta name='viewport' content='width=device-width, initial-scale=1.0'>
     <title>Guesser Game</title>
-    <script src="guesser-game.js" defer></script>
-    <link rel="stylesheet" href="guesser-game.css"/>
+    <script src='guesser-game.js' defer></script>
+    <link rel='stylesheet' href='guesser-game.css'/>
 
 </head>
 <body>
-    <header class="macEffect">
-        <button id='toggle-btn' class='btns' onclick="toggleAudio()">Toggle Music</button>
-        <div id="main-title-box">
+    <div id='menu-btns'>
+        <a href='start-menu.html'><button id='exit-btn' class='btns btns2'>Return to Main Menu</button></a>
+        <button id='toggle-btn' class='btns btns2' onclick="toggleAudio()">Toggle Music</button>
+    </div>
+    <header class='macEffect'>
+        <div id='main-title-box'>
             <h1>Welcome To Guesser Game</h1>
-            <img id="globe" src="globe.png" alt="globe"/>
+            <img id='globe' src='globe.png' alt='globe'/>
         </div>
-        <p id="sub-head">(The objective is to guess as many of the 50 US states as you can!)</p>
+        <p id='sub-head'>(The objective is to guess as many of the 50 US states as you can!)</p>
     </header>
     <main>
-        <div id="entry-box" class="macEffect">
-            <label id="label-text" for="entry">Enter a Location: </label>
-            <input id="entry" placeholder="Press Check Button Or Enter Key"/>
-            <button id="enter-btn" class='btns' onclick="stateCheck()">Check</button>
+        <div id='entry-box' class='macEffect'>
+            <label id='label-text' for='entry'>Enter a Location: </label>
+            <input id='entry' placeholder='Press Check Button Or Enter Key'/>
+            <button id="enter-btn" class='btns' onclick='stateCheck()'>Check</button>
         </div>
-
-        <div id="state-box"></div>
+        <div id='state-box'></div>
     </main>
 </body>
 </html>
