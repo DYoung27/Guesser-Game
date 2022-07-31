@@ -1,0 +1,18 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>start-menu</title>
+    <link rel="stylesheet" href="start-menu.css" />
+    <script>
+        startGame = () => {
+            setTimeout(() => {window.close(); window.open('guesser-game.html')}, 500)
+        }
+    </script>
+</head>
+<body>
+    <button id='start-btn' onclick="startGame()">Start Game</button>
+</body>
+</html>

@@ -25,9 +25,9 @@ body {
 }
 
 #welldone-box{
+    width: 700px;
     top: 50%;
     left: 50%;
-    width: 700px;
     transform: translate(-50%, -50%);
     margin-top: 10px;
     padding: 55px;
@@ -50,12 +50,7 @@ body {
 }
 
 #confetti-btn:hover, .buttons:hover {
-    -ms-transform: scale(1.1); /* IE 9 */
+    -ms-transform: scale(1.1);
     -webkit-transform: scale(1.1);
     transform: scale(1.1);
-}
-
-@keyframes moveWords {
-    0% {transform: scale(1, 1);}
-    50%{transform: scale(1.1, 1.1);}    
 }

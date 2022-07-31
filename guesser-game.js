@@ -1,4 +1,3 @@
-
 // This will import soundtrack for the website
 var soundtrack = new Audio('song.mp3')
 
@@ -46,24 +45,25 @@ for (i = 0; i < states.length; i++) {
     block.appendChild(el)
 }
 
-wordAnimation = (colour) => {
-    const textMove = [ 
-        [
-            {transform: 'rotate(360deg) scale(0)'},
-            {transform: 'rotate(0) scale(1)'}
-        ],
-        [
-            {transform: 'translateX(1000px)'},
-            {transform: 'translateX(0px)'}
-        ]
-    ]
-    
-    const ani = Math.floor(Math.random() * 2)
-    console.log(textMove)
-    return textMove[ani]
+wordAnimation = () => {
+    var ss = document.styleSheets;
+    var anims = [];
+    for (s in ss) {
+        if (ss[s].cssRules) {
+            // loop through all the rules
+            for (var r = ss[s].cssRules.length - 1; r >= 0; r--) {
+                var rule = ss[s].cssRules[r];
+                if ((rule.type === window.CSSRule.KEYFRAMES_RULE || rule.type === window.CSSRule.WEBKIT_KEYFRAMES_RULE)) {
+                    anims.push(rule.name);
+                }
+            }
+        }
+    }
+
+    const ani = Math.floor(Math.random() * anims.length)
+    return anims[ani]
 }
-transform: 'translateX(1000px)'
-transform: 'translateX(0px)'
+
 // Function to process the user guesses
 stateCheck = () => {
     // Checks if the state has already been found
@@ -79,22 +79,21 @@ stateCheck = () => {
 
         // Changes color of states found
         box = document.getElementById(states.indexOf(checkState[0]))
-        console.log(box)
         if (box.className == "oneBox") {
             box.style.color = "seagreen";
-            box.animate(wordAnimation("seagreen"), 500)
         }
         else {
             box.style.color = "skyblue"
-            box.animate(wordAnimation("skyblue"), 500)
         }
+        box.style.animation = `${wordAnimation()} 1.5s linear`
+        console.log(box)
         
         // Clear input box
         enter.value = ""
 
-        if (found.length == 2) {
+        if (found.length == 4) {
             toggleAudio()
-            setTimeout(() => {window.open('','_self').close(); window.open('welldone.html')}, 500)
+            setTimeout(() => {window.open('','_self').close(); window.open('welldone.html')}, 1700)
         }
     }
 }
