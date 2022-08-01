@@ -1,3 +1,22 @@
+// Timer for the game
+const currentTime = Date.now()
+const timer = document.getElementById('timer');
+
+timeCalc = (div) => {
+    val = String((Math.floor((Date.now() - currentTime) / div) % 60))
+    return val.length == 1 ? 0+val : val;
+}
+
+setInterval(() => {
+    const hours = timeCalc(3600000)
+    const mins = timeCalc(60000)
+    const secs = timeCalc(1000)
+    if (!timer.style.color) {timer.style.color = 'green'}
+    if(Number(mins) > 5) {timer.style.color = 'orange'}
+    if(Number(mins) > 10) {timer.style.color = 'red'}
+    timer.innerText = `Timer: ${hours}:${mins}:${secs}`;
+})
+
 // This will import soundtrack for the website
 var soundtrack = new Audio('song.mp3')
 
@@ -37,20 +56,25 @@ for (i = 0; i < states.length; i++) {
     el.setAttribute('id', i)
 
     // Assigns class to give colour variation
-    if (i % 2) {el.setAttribute('class', 'oneBox')}
-    else{el.setAttribute('class', 'twoBox')}
+    if (i % 2) {el.setAttribute('class', 'oneBox boxes')}
+    else{el.setAttribute('class', 'twoBox boxes')}
 
     // Puts state names into each p tag and displays the p tag inside the state-box div tag
     el.innerText= states[i]
     block.appendChild(el)
 }
 
+// Assign random animation to each State box
 wordAnimation = () => {
+
     var ss = document.styleSheets;
+
+    // Array to hold keyframes
     var anims = [];
     for (s in ss) {
         if (ss[s].cssRules) {
-            // loop through all the rules
+
+            // Loop through all the rules to find keyframes
             for (var r = ss[s].cssRules.length - 1; r >= 0; r--) {
                 var rule = ss[s].cssRules[r];
                 if ((rule.type === window.CSSRule.KEYFRAMES_RULE || rule.type === window.CSSRule.WEBKIT_KEYFRAMES_RULE)) {
@@ -60,6 +84,7 @@ wordAnimation = () => {
         }
     }
 
+    // Select random animation
     const ani = Math.floor(Math.random() * anims.length)
     return anims[ani]
 }
@@ -79,14 +104,13 @@ stateCheck = () => {
 
         // Changes color of states found
         box = document.getElementById(states.indexOf(checkState[0]))
-        if (box.className == "oneBox") {
-            box.style.color = "seagreen";
+        if (box.className.includes("oneBox")) {
+            box.style.color = "rgb(58, 58, 58)";
         }
         else {
-            box.style.color = "skyblue"
+            box.style.color = "rgb(204, 203, 203)"
         }
         box.style.animation = `${wordAnimation()} 1.5s linear`
-        console.log(box)
         
         // Clear input box
         enter.value = ""
@@ -97,3 +121,4 @@ stateCheck = () => {
         }
     }
 }
+console.log(document.getElementById('2').className)
