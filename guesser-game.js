@@ -115,7 +115,7 @@ stateCheck = () => {
         // Clear input box
         enter.value = ""
 
-        if (found.length == 4) {
+        if (found.length == 50) {
             toggleAudio()
             setTimeout(() => {window.open('','_self').close(); window.open('welldone.html')}, 1700)
         }
