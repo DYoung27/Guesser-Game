@@ -102,6 +102,7 @@ main {
     border-bottom: solid;
     border-left: solid;
     border-right: solid;
+    background-image: radial-gradient(white, black 160%);
 }
 
 #entry-box {
