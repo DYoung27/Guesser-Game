@@ -7,13 +7,14 @@ timeCalc = (div) => {
     return val.length == 1 ? 0+val : val;
 }
 
-setInterval(() => {
+const loop = setInterval(() => {
     const hours = timeCalc(3600000)
     const mins = timeCalc(60000)
     const secs = timeCalc(1000)
     if (!timer.style.color) {timer.style.color = 'green'}
-    if(Number(mins) > 5) {timer.style.color = 'orange'}
-    if(Number(mins) > 10) {timer.style.color = 'red'}
+    if(Number(mins) >= 20) {window.open('','_self').close(); window.open('toobad.html'); clearInterval(loop)}
+    else if(Number(mins) >= 15) {timer.style.color = 'red'}
+    else if(Number(mins) >= 10) {timer.style.color = 'orange'}
     timer.innerText = `Timer: ${hours}:${mins}:${secs}`;
 })
 
